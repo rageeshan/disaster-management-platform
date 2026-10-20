@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 import bcrypt from 'bcryptjs';
 import dotenv from 'dotenv';
+import connectDB from './config/db.js';
 import Citizen from './models/Citizen.js';
 
 dotenv.config();
@@ -8,7 +9,7 @@ dotenv.config();
 const seedOfficer = async () => {
     try {
         // 1. Connect to MongoDB
-        await mongoose.connect(process.env.MONGO_URI);
+        await connectDB();
         console.log('Connected to MongoDB for seeding...');
 
         const officerNIC = '199512342678';

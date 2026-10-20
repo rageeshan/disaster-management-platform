@@ -3,6 +3,7 @@ import dns from 'node:dns';
 
 try {
   dns.setDefaultResultOrder('ipv4first');
+  dns.setServers(['8.8.8.8', '8.8.4.4']);
 } catch (e) {
   // Ignore if not supported
 }

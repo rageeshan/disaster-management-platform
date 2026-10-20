@@ -1,6 +1,7 @@
 // seedData.js (run inside your backend directory)
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import connectDB from './config/db.js';
 import ReportCluster from './models/ReportCluster.js';
 import HazardReport from './models/HazardReport.js';
 
@@ -8,7 +9,7 @@ dotenv.config();
 
 const seedDB = async () => {
     try {
-        await mongoose.connect(process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/disaster-db');
+        await connectDB();
 
         // 1. Create a dummy citizen report
         const dummyReport = await HazardReport.create({

@@ -1,12 +1,13 @@
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import connectDB from './config/db.js';
 import IoTSensor from './models/IoTSensor.js';
 
 dotenv.config();
 
 const seedSensors = async () => {
     try {
-        await mongoose.connect(process.env.MONGO_URI);
+        await connectDB();
         await IoTSensor.deleteMany(); // Clear existing sensors
 
         await IoTSensor.create([

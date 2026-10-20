@@ -42,5 +42,11 @@ jest.mock('expo-image-picker', () => ({
     launchImageLibraryAsync: jest.fn(() => Promise.resolve({ canceled: true, assets: [] })),
 }));
 
+// Mock Expo Constants
+jest.mock('expo-constants', () => ({
+    expoConfig: { hostUri: '192.168.1.15:8081' },
+    manifest: { debuggerHost: '192.168.1.15:8081' },
+}));
+
 // Global fetch mock helper
 global.fetch = jest.fn();

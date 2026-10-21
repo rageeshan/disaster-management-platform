@@ -1,0 +1,422 @@
+/* =============================================
+   VerificationQueue.css
+   DMC Officer Web Dashboard — Verification UI
+   ============================================= */
+
+/* ── Page Container ── */
+.queue-container {
+    padding: 24px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f1f5f9;
+    min-height: 100vh;
+}
+
+/* ── Top Header Bar ── */
+.queue-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.queue-header h2 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0;
+}
+
+.refresh-btn {
+    background-color: #0284c7;
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.refresh-btn:hover {
+    background-color: #0369a1;
+}
+
+/* ── Two-Column Grid ── */
+.queue-grid {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 20px;
+    align-items: start;
+}
+
+/* ── Left: Cluster List ── */
+.cluster-list {
+    background: #ffffff;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.cluster-list h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #334155;
+    margin: 0 0 14px 0;
+}
+
+.empty-msg {
+    color: #94a3b8;
+    font-size: 13px;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* ── Cluster Card ── */
+.cluster-card {
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 14px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: #fff;
+}
+
+.cluster-card:hover {
+    border-color: #0284c7;
+    background-color: #f8fafc;
+}
+
+.cluster-card.active {
+    border-color: #0284c7;
+    background-color: #f0f9ff;
+}
+
+.cluster-card h4 {
+    margin: 8px 0 4px;
+    font-size: 13px;
+    color: #1e293b;
+}
+
+.cluster-card p {
+    font-size: 12px;
+    color: #64748b;
+    margin: 3px 0;
+}
+
+/* ── Top Row inside Card ── */
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+/* ── Hazard Type Badge ── */
+.badge {
+    padding: 4px 8px;
+    border-radius: 6px;
+    color: #fff;
+    font-weight: 800;
+    font-size: 11px;
+    letter-spacing: 0.4px;
+}
+
+.badge.FLOOD {
+    background-color: #0284c7;
+}
+
+.badge.LANDSLIDE {
+    background-color: #d97706;
+}
+
+.badge.HEAVY_RAIN {
+    background-color: #4f46e5;
+}
+
+.badge.TSUNAMI {
+    background-color: #dc2626;
+}
+
+.badge.EARTHQUAKE {
+    background-color: #7c3aed;
+}
+
+/* ── Confidence Score Label ── */
+.confidence-score {
+    font-size: 12px;
+    font-weight: 700;
+    color: #059669;
+}
+
+/* ── IoT Tag ── */
+.iot-tag {
+    display: inline-block;
+    background-color: #fef3c7;
+    color: #b45309;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 7px;
+    border-radius: 6px;
+    margin-top: 6px;
+}
+
+/* ── Review Button inside Card ── */
+.review-btn {
+    margin-top: 10px;
+    width: 100%;
+    background-color: #0284c7;
+    color: #fff;
+    border: none;
+    padding: 8px;
+    border-radius: 7px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.review-btn:hover:not(:disabled) {
+    background-color: #0369a1;
+}
+
+.review-btn:disabled {
+    background-color: #94a3b8;
+    cursor: not-allowed;
+}
+
+/* ── Right: Review Panel ── */
+.review-panel {
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.cluster-details h3 {
+    font-size: 16px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 4px;
+}
+
+/* ── Placeholder when no cluster selected ── */
+.placeholder-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    color: #94a3b8;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* ── Map Placeholder ── */
+.map-placeholder {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f1f5f9;
+    border-radius: 10px;
+    color: #94a3b8;
+    font-size: 13px;
+}
+
+/* ── Metadata Info Box ── */
+.meta-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 14px 16px;
+}
+
+.meta-box p {
+    font-size: 13px;
+    color: #334155;
+    margin: 5px 0;
+}
+
+.meta-box strong {
+    color: #0f172a;
+}
+
+/* ── IoT Sensors Box ── */
+.iot-sensors-box {
+    background: #fffbeb;
+    border: 1px solid #fcd34d;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-top: 14px;
+}
+
+.iot-sensors-box h4 {
+    font-size: 13px;
+    color: #92400e;
+    margin: 0 0 8px 0;
+}
+
+.iot-sensors-box ul {
+    margin: 0;
+    padding-left: 18px;
+}
+
+.iot-sensors-box li {
+    font-size: 12px;
+    color: #78350f;
+    margin-bottom: 4px;
+}
+
+/* ── Citizen Report Item ── */
+.report-item {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.report-item p {
+    font-size: 12px;
+    color: #334155;
+    margin: 4px 0;
+}
+
+.no-img {
+    font-size: 11px;
+    color: #94a3b8;
+    font-style: italic;
+}
+
+/* ── Photo Gallery ── */
+.media-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.evidence-img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+/* ── Officer Action Form ── */
+.action-form-box {
+    background: #f8fafc;
+    border-radius: 10px;
+    padding: 16px;
+}
+
+.action-form-box h4 {
+    font-size: 14px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 12px;
+}
+
+.action-form-box label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    color: #374151;
+    margin-bottom: 4px;
+}
+
+.action-form-box textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 13px;
+    font-family: inherit;
+    resize: vertical;
+}
+
+.action-form-box select {
+    padding: 6px 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 12px;
+    background: #fff;
+}
+
+/* ── Action Buttons Row ── */
+.action-bar {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+}
+
+.btn-approve {
+    flex: 1;
+    background-color: #16a34a;
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-approve:hover {
+    background-color: #15803d;
+}
+
+.btn-flag {
+    flex: 1;
+    background-color: #ca8a04;
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-flag:hover {
+    background-color: #a16207;
+}
+
+.btn-reject {
+    flex: 1;
+    background-color: #dc2626;
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-reject:hover {
+    background-color: #b91c1c;
+}
+
+/* ── Loading Spinner ── */
+.spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+    font-size: 16px;
+    font-weight: 600;
+    color: #0284c7;
+}
+
+/* ── Responsive: collapse grid on small screens ── */
+@media (max-width: 900px) {
+    .queue-grid {
+        grid-template-columns: 1fr;
+    }
+}

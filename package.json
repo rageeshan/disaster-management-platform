@@ -1,0 +1,15 @@
+{
+  "name": "disaster-management-platform",
+  "version": "1.0.0",
+  "description": "Disaster Early Warning and Incident Management System",
+  "scripts": {
+    "dev:backend": "npm --prefix backend run dev",
+    "dev:frontend": "npm --prefix frontend run dev:web",
+    "dev:mobile": "npm --prefix frontend run dev:mobile",
+    "start:backend": "npm --prefix backend start",
+    "start:frontend": "npm --prefix frontend start",
+    "test:backend": "npm --prefix backend test",
+    "test:frontend": "npm --prefix frontend run test:web",
+    "test:all": "npm --prefix backend test && npm --prefix frontend run test:all"
+  }
+}

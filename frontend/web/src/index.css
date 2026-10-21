@@ -1,0 +1,42 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+  font: 16px/1.5 var(--sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f1f5f9;
+  color: #1e293b;
+}
+
+/* Full-width root — lets the dashboard grid use the full viewport */
+#root {
+  width: 100%;
+  min-height: 100vh;
+  text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 8px 0;
+  font-family: var(--heading);
+  font-weight: 700;
+  color: #0f172a;
+}
+
+p {
+  margin: 0 0 6px 0;
+}
+
+ul {
+  margin: 0;
+  padding-left: 20px;
+}

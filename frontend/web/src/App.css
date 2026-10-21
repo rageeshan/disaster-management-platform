@@ -1,0 +1,251 @@
+/* =============================================
+   App.css — Global App Layout & Side Panel Styles
+   ============================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+.App {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #f8fafc;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ── Top Navigation Bar ── */
+.app-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    height: 58px;
+    background: linear-gradient(90deg, #0f172a, #1e293b);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.app-topbar-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.sidebar-toggle-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: #38bdf8;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.sidebar-toggle-btn:hover {
+    background: rgba(56, 189, 248, 0.2);
+    color: #ffffff;
+}
+
+.app-topbar-title {
+    color: #f8fafc;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+}
+
+.app-topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.app-topbar-user {
+    color: #94a3b8;
+    font-size: 13px;
+}
+
+.app-topbar-user strong {
+    color: #38bdf8;
+}
+
+.app-logout-btn {
+    background: rgba(239, 68, 68, 0.15);
+    color: #fca5a5;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.app-logout-btn:hover {
+    background: rgba(239, 68, 68, 0.3);
+    color: #ffffff;
+}
+
+/* ── App Main Layout ── */
+.app-layout {
+    display: flex;
+    flex: 1;
+    position: relative;
+}
+
+/* ── Side Navigation Panel (Sidebar) ── */
+.app-sidebar {
+    width: 260px;
+    background: #0f172a;
+    color: #f8fafc;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1), width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
+    z-index: 90;
+    border-right: 1px solid #1e293b;
+    min-height: calc(100vh - 58px);
+}
+
+.app-sidebar.closed {
+    margin-left: -260px;
+}
+
+.sidebar-header {
+    padding: 20px 18px 12px 18px;
+    border-bottom: 1px solid #1e293b;
+}
+
+.sidebar-subtitle {
+    font-size: 11px;
+    font-weight: 800;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin: 0;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 16px 12px;
+    flex: 1;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    background: transparent;
+    border: none;
+    border-radius: 10px;
+    color: #94a3b8;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s ease;
+    width: 100%;
+}
+
+.nav-item:hover {
+    background: #1e293b;
+    color: #f8fafc;
+}
+
+.nav-item.active {
+    background: linear-gradient(90deg, #0284c7, #0369a1);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.35);
+}
+
+.nav-icon {
+    font-size: 18px;
+}
+
+.nav-text {
+    flex: 1;
+}
+
+.nav-badge {
+    background: #ef4444;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 900;
+    padding: 2px 6px;
+    border-radius: 10px;
+    letter-spacing: 0.5px;
+}
+
+.sidebar-footer {
+    padding: 16px 18px;
+    border-top: 1px solid #1e293b;
+    color: #64748b;
+    font-size: 12px;
+}
+
+.sidebar-footer p {
+    margin: 0 0 2px 0;
+    font-weight: 700;
+    color: #94a3b8;
+}
+
+.sidebar-footer small {
+    font-size: 11px;
+}
+
+/* ── Main Content Container ── */
+.app-main-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.tab-placeholder-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 30px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    max-width: 700px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.tab-placeholder-card h2 {
+    font-size: 22px;
+    color: #0f172a;
+    margin-bottom: 10px;
+}
+
+.tab-placeholder-card p {
+    color: #64748b;
+    font-size: 14px;
+    margin-bottom: 24px;
+}
+
+.placeholder-switch-btn {
+    background: #0284c7;
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.placeholder-switch-btn:hover {
+    background: #0369a1;
+}

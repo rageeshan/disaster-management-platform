@@ -1,0 +1,60 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "dev": "nodemon index.js",
+    "prod": "node index.js",
+    "seed:officer": "node seedOfficer.js",
+    "seed:sensors": "node seedSensors.js",
+    "seed:emergency": "node seedEmergencyData.js",
+    "test": "node --experimental-vm-modules node_modules/.bin/jest --testEnvironment node",
+    "test:coverage": "node --experimental-vm-modules node_modules/.bin/jest --testEnvironment node --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cloudinary": "^1.41.3",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.5",
+    "express": "^5.2.1",
+    "helmet": "^8.3.0",
+    "joi": "^18.2.9",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.11.0",
+    "morgan": "^1.12.1",
+    "multer": "^2.4.0",
+    "multer-storage-cloudinary": "^4.0.0"
+  },
+  "devDependencies": {
+    "jest": "^30.5.2",
+    "nodemon": "^3.1.14",
+    "supertest": "^7.3.1"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "transform": {},
+    "moduleNameMapper": {
+      "^(\\.{1,2}/.*)\\.js$": "$1"
+    },
+    "coverageThreshold": {
+      "global": {
+        "statements": 80,
+        "branches": 80,
+        "functions": 80
+      }
+    },
+    "collectCoverageFrom": [
+      "controllers/reportController.js",
+      "controllers/verificationController.js",
+      "controllers/emergencyResponseController.js",
+      "services/clusteringService.js",
+      "services/iotService.js"
+    ]
+  }
+}

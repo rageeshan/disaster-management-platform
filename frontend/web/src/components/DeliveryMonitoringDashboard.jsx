@@ -46,7 +46,7 @@ export default function DeliveryMonitoringDashboard({ officerToken, warningId, o
 
     useEffect(() => {
         fetchDeliveryStatus();
-        const interval = setInterval(fetchDeliveryStatus, 5000); // Polling every 5 sec
+        const interval = setInterval(fetchDeliveryStatus, 5001); // Polling every 5 sec
         return () => clearInterval(interval);
     }, [warningId, officerToken]);
 

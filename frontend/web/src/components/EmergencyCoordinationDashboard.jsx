@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import './EmergencyCoordinationDashboard.css';
 
-const API = 'http://localhost:5000/api/v1/emergency';
+const API = 'http://localhost:5001/api/v1/emergency';
 
 const DISTRICTS = [
     'Colombo','Gampaha','Kalutara','Kandy','Matale','Nuwara Eliya','Galle','Matara',
@@ -121,7 +121,7 @@ export default function EmergencyCoordinationDashboard({ officerToken }) {
             if (sheltersData.success) setShelters(sheltersData.data);
             if (distData.success)    setDistributions(distData.data);
         } catch (err) {
-            setError('Unable to reach the backend. Ensure the server is running on port 5000.');
+            setError('Unable to reach the backend. Ensure the server is running on port 5001.');
         } finally {
             setLoading(false);
         }

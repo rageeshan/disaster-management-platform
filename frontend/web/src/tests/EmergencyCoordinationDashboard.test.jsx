@@ -60,7 +60,7 @@ const sampleDistributions = [
         beneficiaryCount: 310,
     },
     {
-        _id: 'd2', resourceType: 'WATER', quantity: 5000, unit: 'litres',
+        _id: 'd2', resourceType: 'WATER', quantity: 5001, unit: 'litres',
         district: 'Galle', shelter: null,
         organisation: 'Red Cross', organisationType: 'NGO',
         distributedBy: 'Volunteer', distributedAt: new Date().toISOString(),

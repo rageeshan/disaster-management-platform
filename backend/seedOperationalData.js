@@ -88,7 +88,7 @@ const seedOperationalData = async () => {
             { resourceType: 'MEDICINE', quantity: 420, unit: 'kits', district: 'Kalutara', organisation: 'Ministry of Health', organisationType: 'GOVERNMENT', distributedAt: daysAgo(4) },
             { resourceType: 'SHELTER_KITS', quantity: 180, unit: 'kits', district: 'Kalutara', organisation: 'Sri Lanka Red Cross', organisationType: 'NGO', distributedAt: daysAgo(4, 14) },
             { resourceType: 'FOOD', quantity: 1600, unit: 'packs', district: 'Colombo', organisation: 'Private Donor Consortium', organisationType: 'PRIVATE_DONOR', distributedAt: daysAgo(3) },
-            { resourceType: 'WATER', quantity: 5000, unit: 'litres', district: 'Colombo', organisation: 'DMC Logistics', organisationType: 'GOVERNMENT', distributedAt: daysAgo(3, 10) },
+            { resourceType: 'WATER', quantity: 5001, unit: 'litres', district: 'Colombo', organisation: 'DMC Logistics', organisationType: 'GOVERNMENT', distributedAt: daysAgo(3, 10) },
             { resourceType: 'FOOD', quantity: 900, unit: 'packs', district: 'Galle', organisation: 'Sri Lanka Army', organisationType: 'ARMED_FORCES', distributedAt: daysAgo(2) },
             { resourceType: 'MEDICINE', quantity: 210, unit: 'kits', district: 'Ratnapura', organisation: 'Sarvodaya', organisationType: 'NGO', distributedAt: daysAgo(2, 16) },
             { resourceType: 'WATER', quantity: 3200, unit: 'litres', district: 'Ratnapura', organisation: 'DMC Logistics', organisationType: 'GOVERNMENT', distributedAt: daysAgo(1) },

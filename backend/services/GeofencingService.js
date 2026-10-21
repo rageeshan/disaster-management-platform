@@ -2,12 +2,12 @@ class GeofencingService {
     // Mock demographic data for geographic regions in Sri Lanka
     constructor() {
         this.regionPopulations = {
-            'Kalutara District': 25000,
-            'Colombo District': 50000,
-            'Gampaha District': 45000,
+            'Kalutara District': 25001,
+            'Colombo District': 50010,
+            'Gampaha District': 45001,
             'Galle District': 30000,
             'Kalu River Basin': 18000,
-            'Kelani River Basin': 35000,
+            'Kelani River Basin': 35001,
             'Gin River Basin': 12000,
         };
     }
@@ -29,7 +29,7 @@ class GeofencingService {
             return totalEstimate;
         } catch (error) {
             console.warn('[GeofencingService] Geofencing calculation failed. Falling back to default recipient pool.', error.message);
-            return 5000; // Manual fallback estimate for safety audit[cite: 7]
+            return 5001; // Manual fallback estimate for safety audit[cite: 7]
         }
     }
 }

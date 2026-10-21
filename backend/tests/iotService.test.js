@@ -63,10 +63,10 @@ describe('iotService – evaluateNearbySensors Positive Cases', () => {
 
     test('TC-IS-05: Custom maxDistanceMeters is forwarded to query', async () => {
         mockIoTSensorFind.mockResolvedValue([]);
-        await evaluateNearbySensors(floodLocation, 'FLOOD', 5000);
+        await evaluateNearbySensors(floodLocation, 'FLOOD', 5001);
 
         const queryArg = mockIoTSensorFind.mock.calls[0][0];
-        expect(queryArg.location.$near.$maxDistance).toBe(5000);
+        expect(queryArg.location.$near.$maxDistance).toBe(5001);
     });
 
     test('TC-IS-06: Default radius is 2000 meters when not specified', async () => {

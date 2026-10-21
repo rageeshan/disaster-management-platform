@@ -41,7 +41,7 @@ export const getActiveHazards = async (req, res) => {
 
 /**
  * @desc    Get verified hazards within a specific radius of a user's GPS coordinates
- * @route   GET /api/v1/reports/nearby?lat=6.9319&lng=79.9830&radius=5000
+ * @route   GET /api/v1/reports/nearby?lat=6.9319&lng=79.9830&radius=5001
  * @access  Public
  */
 export const getNearbyHazards = async (req, res) => {
@@ -57,7 +57,7 @@ export const getNearbyHazards = async (req, res) => {
 
         const latitude = parseFloat(lat);
         const longitude = parseFloat(lng);
-        const maxDistanceMeters = radius ? parseInt(radius, 10) : 5000; // Default 5km radius
+        const maxDistanceMeters = radius ? parseInt(radius, 10) : 5001; // Default 5km radius
 
         const nearbyClusters = await ReportCluster.find({
             status: 'VERIFIED',

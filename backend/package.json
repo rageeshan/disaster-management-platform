@@ -10,6 +10,7 @@
     "seed:officer": "node seedOfficer.js",
     "seed:sensors": "node seedSensors.js",
     "seed:emergency": "node seedEmergencyData.js",
+    "seed:operations": "node seedOperationalData.js",
     "test": "node --experimental-vm-modules node_modules/.bin/jest --testEnvironment node",
     "test:coverage": "node --experimental-vm-modules node_modules/.bin/jest --testEnvironment node --coverage"
   },
@@ -53,8 +54,10 @@
       "controllers/reportController.js",
       "controllers/verificationController.js",
       "controllers/emergencyResponseController.js",
+      "controllers/postEventAnalysisController.js",
       "services/clusteringService.js",
-      "services/iotService.js"
+      "services/iotService.js",
+      "services/postEventAnalysisService.js"
     ]
   }
 }

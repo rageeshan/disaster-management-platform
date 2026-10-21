@@ -187,6 +187,10 @@
     letter-spacing: 0.5px;
 }
 
+.nav-badge.yellow {
+    background: #ca8a04;
+}
+
 .sidebar-footer {
     padding: 16px 18px;
     border-top: 1px solid #1e293b;

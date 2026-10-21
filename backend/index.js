@@ -7,6 +7,7 @@ import reportRoutes from './routes/reportRoutes.js';
 import warningCreationRoutes from './routes/warningCreationRoutes.js';
 import warningDisseminationRoutes from './routes/warningDisseminationRoutes.js';
 import emergencyResponseRoutes from './routes/emergencyResponseRoutes.js';
+import postEventAnalysisRoutes from './routes/postEventAnalysisRoutes.js';
 
 // Load environment variables
 dotenv.config();
@@ -31,6 +32,9 @@ app.use('/api/warnings', warningDisseminationRoutes);
 
 // Mount Module 3 Routes (Emergency Response & Resource Deployment)
 app.use('/api/v1/emergency', emergencyResponseRoutes);
+
+// Mount Module 4 Routes (Post-Event Analysis & Operational Reports)
+app.use('/api/v1/analysis', postEventAnalysisRoutes);
 
 // Base Health-check Route
 app.get('/', (req, res) => {

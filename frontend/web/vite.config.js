@@ -13,6 +13,7 @@ export default defineConfig({
       include: [
         'src/components/OfficerLogin.jsx',
         'src/components/VerificationQueue.jsx',
+        'src/components/PostEventAnalysisDashboard.jsx',
       ],
       thresholds: {
         statements: 80,

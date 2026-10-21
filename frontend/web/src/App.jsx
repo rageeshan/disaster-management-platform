@@ -5,6 +5,7 @@ import VerificationQueue from './components/VerificationQueue';
 import WarningCreationWizard from './components/WarningCreationWizard';
 import DeliveryMonitoringDashboard from './components/DeliveryMonitoringDashboard';
 import EmergencyCoordinationDashboard from './components/EmergencyCoordinationDashboard';
+import PostEventAnalysisDashboard from './components/PostEventAnalysisDashboard';
 
 function App() {
     // Session state
@@ -117,6 +118,14 @@ function App() {
                             <span className="nav-icon">🚒</span>
                             <span className="nav-text">Emergency Response</span>
                         </button>
+
+                        <button
+                            className={`nav-item ${activeTab === 'POST_EVENT_ANALYSIS' ? 'active' : ''}`}
+                            onClick={() => setActiveTab('POST_EVENT_ANALYSIS')}
+                        >
+                            <span className="nav-icon">📊</span>
+                            <span className="nav-text">Post-Event Analysis</span>
+                        </button>
                     </nav>
 
                     <div className="sidebar-footer">
@@ -164,6 +173,10 @@ function App() {
                         <EmergencyCoordinationDashboard
                             officerToken={session.token}
                         />
+                    )}
+
+                    {activeTab === 'POST_EVENT_ANALYSIS' && (
+                        <PostEventAnalysisDashboard officerToken={session.token} />
                     )}
                 </main>
             </div>

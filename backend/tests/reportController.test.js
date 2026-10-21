@@ -298,4 +298,42 @@ describe('submitReport – Branch Coverage for Coordinate Parsing', () => {
         const arg = mockReportCreate.mock.calls[0][0];
         expect(arg.location.coordinates[0]).toBeCloseTo(79.983);
     });
+
+    test('TC-RC-17: Malformed coords string fallback parses via replace+split (line 49)', async () => {
+        // Covers the catch branch where JSON.parse fails on coords string
+        mockReportCreate.mockResolvedValue({ _id: 'r17', save: jest.fn() });
+        mockProcessClustering.mockResolvedValue({ _id: 'c17', confidenceScore: 2 });
+
+        const req = {
+            body: {
+                hazardType: 'FLOOD', description: 'Malformed coords string', district: 'Colombo',
+                coordinates: '[79.983, 6.932',  // missing closing bracket — JSON.parse will fail
+            },
+            user: { id: 'u1' }, files: [],
+        };
+        const res = mockRes();
+        await submitReport(req, res);
+
+        expect(res.status).toHaveBeenCalledWith(201);
+        const arg = mockReportCreate.mock.calls[0][0];
+        expect(arg.location.coordinates[0]).toBeCloseTo(79.983);
+    });
+
+    test('TC-RC-18: Single photo URL string in body is wrapped into array (line 82)', async () => {
+        // Covers: bodyPhotos is a non-array string → should be wrapped into [bodyPhotos]
+        mockReportCreate.mockResolvedValue({ _id: 'r18', save: jest.fn() });
+        mockProcessClustering.mockResolvedValue({ _id: 'c18', confidenceScore: 2 });
+
+        const req = {
+            body: { ...baseBody, photoUrls: 'https://example.com/photo.jpg' },
+            user: { id: 'u1' }, files: [],
+        };
+        const res = mockRes();
+        await submitReport(req, res);
+
+        expect(res.status).toHaveBeenCalledWith(201);
+        const arg = mockReportCreate.mock.calls[0][0];
+        expect(Array.isArray(arg.photoUrls)).toBe(true);
+        expect(arg.photoUrls[0]).toBe('https://example.com/photo.jpg');
+    });
 });

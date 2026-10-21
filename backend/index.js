@@ -6,6 +6,7 @@ import authRoutes from './routes/authRoutes.js';
 import reportRoutes from './routes/reportRoutes.js';
 import warningCreationRoutes from './routes/warningCreationRoutes.js';
 import warningDisseminationRoutes from './routes/warningDisseminationRoutes.js';
+import postEventAnalysisRoutes from './routes/postEventAnalysisRoutes.js';
 
 // Load environment variables
 dotenv.config();
@@ -27,6 +28,7 @@ app.use('/api/v1/reports', reportRoutes);
 // Mount Module 2 Routes (Hazard Warning Dissemination)
 app.use('/api/warnings', warningCreationRoutes);
 app.use('/api/warnings', warningDisseminationRoutes);
+app.use('/api/v1/analysis', postEventAnalysisRoutes);
 
 // Base Health-check Route
 app.get('/', (req, res) => {

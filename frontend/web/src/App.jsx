@@ -4,6 +4,7 @@ import OfficerLogin from './components/OfficerLogin';
 import VerificationQueue from './components/VerificationQueue';
 import WarningCreationWizard from './components/WarningCreationWizard';
 import DeliveryMonitoringDashboard from './components/DeliveryMonitoringDashboard';
+import EmergencyCoordinationDashboard from './components/EmergencyCoordinationDashboard';
 
 function App() {
     // Session state
@@ -108,6 +109,14 @@ function App() {
                             <span className="nav-icon">⚡</span>
                             <span className="nav-text">IoT Telemetry Sensors</span>
                         </button>
+
+                        <button
+                            className={`nav-item ${activeTab === 'EMERGENCY_RESPONSE' ? 'active' : ''}`}
+                            onClick={() => setActiveTab('EMERGENCY_RESPONSE')}
+                        >
+                            <span className="nav-icon">🚒</span>
+                            <span className="nav-text">Emergency Response</span>
+                        </button>
                     </nav>
 
                     <div className="sidebar-footer">
@@ -149,6 +158,12 @@ function App() {
                                 Open Incident Verification Queue →
                             </button>
                         </div>
+                    )}
+
+                    {activeTab === 'EMERGENCY_RESPONSE' && (
+                        <EmergencyCoordinationDashboard
+                            officerToken={session.token}
+                        />
                     )}
                 </main>
             </div>
